@@ -11,14 +11,15 @@ while (opcao != 3) do
     if (opcao == 1)
         print "> Digite o nome da receita: "
         nome = gets.chomp()
-        receitas << nome
+        print "> Digite o tipo da receita: "
+        tipo = gets.chomp()
+        receitas << {nome: nome, tipo: tipo}
         puts "-"
         puts "> Receita #{nome} cadastrada com sucesso."
-        puts "-"
     elsif (opcao == 2)
         puts "*********** RECEITAS ***********"
         receitas.each do |receita|
-            puts receita
+            puts "NOME: #{receita[:nome]} -- TIPO: #{receita[:tipo]}"
         end
         puts "-"
     else

@@ -1,9 +1,14 @@
+INSERIR = 1
+VER = 2
+SAIR = 3
+
+
 puts "******** Bem vindo ao cookbook **********"
 puts "-"
 def menu()
-    puts "[1] Cadastrar receita."
-    puts "[2] Ver receitas."
-    puts "[3] Sair."
+    puts "[#{INSERIR}] Cadastrar receita."
+    puts "[#{VER}] Ver receitas."
+    puts "[#{SAIR}] Sair."
     print "> Escolha uma opção: "
     return gets.to_i
 end
@@ -28,11 +33,13 @@ opcao = menu()
 receitas = []
 
 
-while (opcao != 3) do
-    if (opcao == 1)
+loop do
+    if (opcao == INSERIR)
         receitas << inserir()
-    elsif (opcao == 2)
+    elsif (opcao == VER)
         ver(receitas)
+    elsif (opcao == SAIR)
+        break
     else
         puts "> Opção inválida!"
     end
